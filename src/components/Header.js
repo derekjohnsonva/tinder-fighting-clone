@@ -6,6 +6,8 @@ import IconButton from "@material-ui/core/IconButton";
 import ArrowBackIosIcon from "@material-ui/icons/ArrowBackIos";
 import { Link, useHistory } from "react-router-dom";
 
+import logo from "../static/logo512.png"
+
 function Header({ backButton }) {
   const history = useHistory();
   return (
@@ -15,18 +17,20 @@ function Header({ backButton }) {
           <ArrowBackIosIcon className="header__icon" fontSize="large" />
         </IconButton>
       ) : (
-        <IconButton>
-          <PersonIcon className="header__icon" fontSize="large" />
-        </IconButton>
+        <Link to="/app/profile">
+          <IconButton>
+            <PersonIcon className="header__icon" fontSize="large" />
+          </IconButton>
+        </Link>
       )}
-      <Link to="/">
+      <Link to="/app">
         <img
           className="header__logo"
-          src="https://1000logos.net/wp-content/uploads/2018/07/tinder-logo.png"
-          alt="tinder logo"
+          src={logo}
+          alt="boxing-logo"
         />
       </Link>
-      <Link to="/chat">
+      <Link to="/app/chat">
         <IconButton>
           <ForumIcon className="header__icon" fontSize="large" />
         </IconButton>
