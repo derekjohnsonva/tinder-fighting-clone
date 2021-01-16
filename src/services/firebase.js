@@ -1,4 +1,4 @@
-import firebase, { firestore } from "firebase";
+import firebase from "firebase";
 
 const firebaseConfig = {
     apiKey: "AIzaSyB1vH1FZ7Z3gtmPEBE5sxRSgHBvr9ZTZMo",
@@ -38,7 +38,7 @@ export const generateUserDocument = async (user, additionalData) => {
   return getUserDocument(user.uid);
 }
 
-const getUserDocument = async uid => {
+const getUserDocument = async (uid) => {
   if (!uid) return null;
   try {
     const userDocument = await database.collection('users').doc(`/${uid}`).get();
@@ -51,6 +51,12 @@ const getUserDocument = async uid => {
   }
 };
 
+export const writeUserProfileImage = (uid, file) => {
+  firebase.storage().ref('users/' + uid + '/profile.jpg').put(file).then(
+    () => console.log('successfully uploaded')
+  ).catch(error => console.log(error))
+
+}
 
 export const auth = firebase.auth();
 export const database = firebaseApp.firestore();

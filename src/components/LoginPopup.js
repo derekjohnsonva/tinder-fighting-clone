@@ -2,7 +2,7 @@ import React from 'react'
 import { Dialog, Button,DialogTitle, DialogContent, makeStyles, Typography } from '@material-ui/core';
 import CloseIcon from '@material-ui/icons/Close';
 import { withStyles } from '@material-ui/core/styles';
-import {auth, signInWithGoogle, generateUserDocument} from "../services/firebase";
+import {signInWithGoogle} from "../services/firebase";
 
 const GoogleButton = withStyles({
     root: {
@@ -48,7 +48,7 @@ const useStyles = makeStyles(theme => ({
     },
 }))
 
-export default function Popup(props) {
+export default function LoginPopup(props) {
     const { title, openPopup, setOpenPopup } = props;   
     const classes = useStyles();
 

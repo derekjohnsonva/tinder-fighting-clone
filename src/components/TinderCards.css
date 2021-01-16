@@ -8,20 +8,53 @@
     background-size: cover;
     background-position: center;
 }
-
-.card h3 {
-    position: absolute;
+.card__name{
+    display: flex;
+}
+.card__name h3 {
     font-size: 30px;
-    bottom: 10px;
+    padding-right: 10px;
     color: white;
 }
-
+.card__name h4 {
+    font-size: 30px;
+    font-weight: 300;
+    color: white;
+}
+.card__info__line {
+    color: white;
+    display: flex;
+    font-size: 20px;
+    font-weight: 300;
+    padding-top: 20px;
+}
+.card__info__line h4 {
+    padding-left: 10px;
+}
 .tinderCards__cardContainer {
     display: flex;
     justify-content: center;
     margin-top: 5vh;
 }
-
+.card__text {
+    width: 75%;
+    height: 30%;
+    /* background: green; */
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    padding-top: 10px;
+    margin: 20px 10px;
+}
+.info__button {
+    position: absolute;
+    bottom: 10px;
+    right: 0;
+    padding: 10px;
+    text-align: center;
+}
 /* stacks cards on top of each other */
 .swipe {
     position: absolute;

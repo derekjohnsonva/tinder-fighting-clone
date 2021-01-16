@@ -8,7 +8,6 @@ import TinderCards from "./TinderCards";
 import SwipeButtons from "./SwipeButtons";
 import Chats from "./Chats";
 import ChatScreen from "../pages/ChatScreen";
-import SignIn from "../pages/SignIn";
 import SignUp from "../pages/SignUp";
 import PasswordReset from "../pages/PasswordReset";
 import ProfilePage from "../pages/ProfilePage"
@@ -21,19 +20,19 @@ function Application() {
     user ? 
       <Router>
         <Switch>
-          <Route path="/app/chat/:person">
+          <Route path="/chat/:person">
             <Header backButton="/app/chat" />
             <ChatScreen/>
           </Route>
-          <Route path="/app/chat">
+          <Route path="/chat">
             <Header backButton="/app" />
             <Chats />
           </Route>
-          <Route path="/app/profile">
+          <Route path="/profile">
             <Header backButton="/app" />
             <ProfilePage />
           </Route>
-          <Route path="/app">
+          <Route path="/">
             <Header />
             <TinderCards />
             <SwipeButtons />

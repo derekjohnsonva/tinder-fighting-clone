@@ -1,6 +1,7 @@
 import React, { useState } from "react";
-import Popup from "../components/Popup";
+import LoginPopup from "../components/LoginPopup";
 import "./Landing.css";
+
 import { withStyles } from '@material-ui/core/styles';
 import { Button } from '@material-ui/core';
 import logo from "../static/logo512.png"
@@ -35,7 +36,6 @@ root: {
     color: '#FF8E53',
     height: 48,
     width: 100,
-    // boxShadow: '0 3px 5px 2px rgba(255, 105, 135, .3)',
 },
 label: {
     fontSize: 17,
@@ -45,12 +45,13 @@ label: {
 })(Button);
 
 function Landing() {
+    //TODO: Checks if the user is logged in and if so reroutes to the main page
     const [openLogin, setOpenLogin] = useState(false);
     const [openSignUp, setOpenSignUp] = useState(false);
     return(
         <div className="landing">
-            <Popup title="Sign Up" openPopup={openSignUp} setOpenPopup={setOpenSignUp}/>
-            <Popup title="Log In" openPopup={openLogin} setOpenPopup={setOpenLogin}/>
+            <LoginPopup title="Sign Up" openPopup={openSignUp} setOpenPopup={setOpenSignUp}/>
+            <LoginPopup title="Log In" openPopup={openLogin} setOpenPopup={setOpenLogin}/>
             
             <div className="landing__header">
                 <div className="landing__header__logo">

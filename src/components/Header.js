@@ -17,20 +17,20 @@ function Header({ backButton }) {
           <ArrowBackIosIcon className="header__icon" fontSize="large" />
         </IconButton>
       ) : (
-        <Link to="/app/profile">
+        <Link to="/profile">
           <IconButton>
             <PersonIcon className="header__icon" fontSize="large" />
           </IconButton>
         </Link>
       )}
-      <Link to="/app">
+      <Link to="/">
         <img
           className="header__logo"
           src={logo}
           alt="boxing-logo"
         />
       </Link>
-      <Link to="/app/chat">
+      <Link to="/chat">
         <IconButton>
           <ForumIcon className="header__icon" fontSize="large" />
         </IconButton>
